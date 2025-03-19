@@ -1,21 +1,14 @@
 # Torneos Deportivos
 
-1)	Crea un proyecto llamado sesion05torneos en la organización del equipo de prácticas.
-2)	Tomar los fuentes y tests del repo
+## Tareas
+1)	Crea un proyecto llamado sesion05torneos en la organización del equipo de prácticas, basado en el template `ualhmis/torneosdeportivos`.
 
-```
-ualhmis\torneosdeportivos\src\main\java\org\ualhmis\torneos
- 
-ualhmis\torneosdeportivos\src\test\java\org\ualhmis\torneos 
-```
+2)	Diseñar e implementar los tests en JUnit 5 para:
+- Usar **test parametrizados** cuando sea posible
+- Obtener el **100% de cobertura**. 
+- Asegúrar de que los test incluyan los **valores límite**. 
 
-Reutilizar también el `pom.xml`
-
-
-3)	Diseñar e implementar los tests en JUnit 5 para:
-- Usar test parametrizados cuando sea posible
-- Obtener el 100% de cobertura. 
-- Asegúrar de que los test incluyan los casos límite. 
+3) Implementa los nuevos requisitos descritos abajo
 
 4)	Realizar un pequeño informe con captura de pantalla del resultado de la cobertura (en Eclipse o cualquier otro IDE) y entregarlo en la tarea correspondiente.
 
