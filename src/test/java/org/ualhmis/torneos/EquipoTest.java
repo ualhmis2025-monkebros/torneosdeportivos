@@ -2,6 +2,7 @@ package org.ualhmis.torneos;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 import java.time.LocalDate;
+import java.util.Map;
 
 // Creación de jugadores y cálculo automático de categoría
 
@@ -28,7 +29,7 @@ class EquipoTest {
         assertEquals(1, equipo.getJugadores().size(), "El jugador no debería agregarse dos veces.");
 
         // Caso negativo 2: agregar un jugador de diferente categoría
-        Jugador jugadorDiferenteCategoria = new Jugador("Pedro", "Masculino", LocalDate.of(2010, 5, 20)); // Infantil
+        Jugador jugadorDiferenteCategoria = new Jugador("Pedro", "Masculino", LocalDate.of(2015, 5, 20)); // Infantil
         equipo.agregarJugador(jugadorDiferenteCategoria);
 
         // Verificar lista de jugadores
@@ -60,4 +61,7 @@ class EquipoTest {
         assertNotNull(equipo.getSegundoEntrenador());
         assertEquals("Ana", equipo.getSegundoEntrenador().getNombre());
     }
+    
+
+    
 }
