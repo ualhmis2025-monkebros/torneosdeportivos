@@ -48,12 +48,8 @@ class JugadorTest {
     void testCreacionJugadorInvalido(String nombreTexto, String generoTexto, String fechaTexto) {
         String nombre = "null".equals(nombreTexto) ? null : nombreTexto;
         String genero = "null".equals(generoTexto) ? null : generoTexto;
-        LocalDate fecha; 
-       
-        if ("null".equals(fechaTexto)) fecha = null;
-        else if (fechaTexto.isBlank()) fecha = null;
-        else fecha =  LocalDate.parse(fechaTexto);
-        		
+        LocalDate fecha = ("null".equals(fechaTexto) || fechaTexto.isBlank()) ? null : LocalDate.parse(fechaTexto);
+        
         assertThrows(IllegalArgumentException.class, () -> new Jugador(nombre, genero, fecha));
     }
     
