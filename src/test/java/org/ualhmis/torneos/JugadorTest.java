@@ -34,12 +34,14 @@ class JugadorTest {
     @CsvSource({
         "'',Masculino,2010-01-01",      // nombre vacío
         "' ',Masculino,2010-01-01",     // nombre en blanco
-        "null,Masculino,2010-01-01",    // nombre nulo
+        "null,Masculino,2010-01-01",    // nombre nulo -> fecha válida (se evalúa LocalDate.parse)
 
         "Juan,'',2010-01-01",           // género vacío
         "Juan,' ',2010-01-01",          // género en blanco
-        "Juan,null,2010-01-01",         // género nulo
+        "Juan,null,2010-01-01",         // género nulo -> fecha válida (se evalúa LocalDate.parse)
 
+        "Juan,Masculino,''",           // fecha vacía
+        "Juan,Masculino,' '",          // fecha en blanco
         "Juan,Masculino,null"          // fecha nula
     })
     // Test parametrizado que comprueba que el jugador no tenga ningún parámetro nulo
@@ -49,7 +51,6 @@ class JugadorTest {
         LocalDate fecha; 
        
         if ("null".equals(fechaTexto)) fecha = null;
-        else if (fechaTexto == null) fecha = null;
         else if (fechaTexto.isBlank()) fecha = null;
         else fecha =  LocalDate.parse(fechaTexto);
         		
