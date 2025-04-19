@@ -52,7 +52,7 @@ class TorneoTest {
     
     // Test parametrizado que comprueba que el equipo añadido coincida con las características del torneo
     void testNoRegistrarEquipoConCategoriaOModalidadIncorrectas(String categoriaEquipo, String modalidadEquipo) {
-        Equipo equipo = new Equipo("Equipo X", categoriaEquipo, modalidadEquipo, entrenador);
+        Equipo equipo = new Equipo("Hola", categoriaEquipo, modalidadEquipo, entrenador);
 
         assertThrows(IllegalArgumentException.class, () -> torneo.registrarEquipo(equipo));
     }
