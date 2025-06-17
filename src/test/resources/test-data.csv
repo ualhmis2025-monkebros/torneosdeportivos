@@ -1,0 +1,7 @@
+nombreTexto,categoriaTexto,modalidadTexto,entrenadorTexto
+,Infantil,Masculino,Entrenador Principal
+ ,Infantil,Masculino,Entrenador Principal
+null,Infantil,Masculino,Entrenador Principal
+Equipo A,null,Masculino,Entrenador Principal
+Equipo A,Infantil,null,Entrenador Principal
+Equipo A,Infantil,Masculino,null

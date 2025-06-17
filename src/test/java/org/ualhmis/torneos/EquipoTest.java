@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.CsvSource;
 
 import java.time.LocalDate;
@@ -25,25 +26,15 @@ class EquipoTest {
 	}
 
 	@ParameterizedTest
-	@CsvSource({ "'',Infantil,Masculino,Entrenador Principal", // nombre vacío
-			"' ',Infantil,Masculino,Entrenador Principal", // nombre en blanco
-			"null,Infantil,Masculino,Entrenador Principal", // nombre nulo
+    @CsvFileSource(resources = "/test-data.csv", numLinesToSkip = 1)
+    void testCreacionEquipo(String nombreTexto, String categoriaTexto, String modalidadTexto, String entrenadorTexto) {
+        String nombre = "null".equals(nombreTexto) ? null : nombreTexto;
+        String categoria = "null".equals(categoriaTexto) ? null : categoriaTexto;
+        String modalidad = "null".equals(modalidadTexto) ? null : modalidadTexto;
+        Entrenador entrenadorAux = "null".equals(entrenadorTexto) ? null : entrenador;
 
-			"Equipo A,null,Masculino,Entrenador Principal", // categoría nula
-
-			"Equipo A,Infantil,null,Entrenador Principal", // modalidad nula
-
-			"Equipo A,Infantil,Masculino,null" // entrenador nulo
-	})
-	// Test parametrizado que comprueba que el equipo no tenga ningún parámetro nulo
-	void testCreacionEquipo(String nombreTexto, String categoriaTexto, String modalidadTexto, String entrenadorTexto) {
-		String nombre = "null".equals(nombreTexto) ? null : nombreTexto;
-		String categoria = "null".equals(categoriaTexto) ? null : categoriaTexto;
-		String modalidad = "null".equals(modalidadTexto) ? null : modalidadTexto;
-		Entrenador entrenadorAux = "null".equals(entrenadorTexto) ? null : entrenador;
-
-		assertThrows(IllegalArgumentException.class, () -> new Equipo(nombre, categoria, modalidad, entrenadorAux));
-	}
+        assertThrows(IllegalArgumentException.class, () -> new Equipo(nombre, categoria, modalidad, entrenadorAux));
+    }
 
 	@Test
 	void testGetter() {
