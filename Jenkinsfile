@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Git fetch') {
       steps {
-        git branch: 'main', url: 'https://github.com/ualhmis2025-monkebros/torneosdeportivos.git'
+        git branch: 'main', url: 'https://github.com/ualhmis2025-monkebros/torneosdeportivos.git' //Añade entre branch y url (si privado): credentialsId: (tokken del github)
       }
     }
 
